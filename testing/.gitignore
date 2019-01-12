@@ -4,6 +4,6 @@
 .project
 .classpath
 .settings
-/resources/config.properties
-/resources/authentication.properties
-/driver/chromedriver.exe
+resources/config.properties
+resources/authentication.properties
+driver/chromedriver.exe
