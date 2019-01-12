@@ -6,4 +6,3 @@
 .settings
 resources/config.properties
 resources/authentication.properties
-chromedriver.exe
