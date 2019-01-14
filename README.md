@@ -43,3 +43,5 @@ mvn clean test -DsuiteXmlFile=testng.xml
 Used Extent Reports for report generation.
 
 the report will be available under ExtentReports folder.
+
+[click here](https://raw.githubusercontent.com/nirustanite/Automation_Test/master/testing/ExtentReports/ExtentReportResults.html) for sample run report 
