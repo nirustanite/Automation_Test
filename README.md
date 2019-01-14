@@ -5,7 +5,7 @@
 
 1. Sign-up and get ApiKeyId and SecretApiKey required for signature generation.
 2. Use Ingenico's JavaServerSDK and use HostedCheckoutPayment requestto get Partial-Redirect URL.
-3. Add "https://payment." to the Partia-Redirect URL and redirect on Chrome Browser.
+3. Add "https://payment." to the Partial-Redirect URL and redirect on Chrome Browser.
 4. At hostedCheckout page, Select Ideal Payment method.
 5. Select issuer.
 6. Click on Pay button.
@@ -38,10 +38,10 @@ mvn clean test -DsuiteXmlFile=testng.xml
 2. Enter values in unfilled places in resources/config.properties
 3. Install chrome driver and place it in driver folder.
 
+---
+
 **REPORT GENERATION**
 
 Used Extent Reports for report generation.
 
-the report will be available under ExtentReports folder.
-
-[click here](http://htmlpreview.github.io/?https://github.com/nirustanite/Automation_Test/blob/master/testing/ExtentReports/ExtentReportResults.html) for sample run report 
+The report will be available under ExtentReports folder.
