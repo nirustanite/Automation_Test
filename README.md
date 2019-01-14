@@ -38,3 +38,8 @@ mvn clean test -DsuiteXmlFile=testng.xml
 2. Enter values in unfilled places in resources/config.properties
 3. Install chrome driver and place it in driver folder.
 
+**REPORT GENERATION**
+
+Used Extent Reports for report generation.
+
+the report will be available under ExtentReports folder.
