@@ -15,14 +15,11 @@
 
 **PARAMETERS REQUIRED**
 
----
-
 **config.properties**
 1. ApiKeyId.
 2. SecretApiKey.
 3. MerchantID
 
----
 
 **authentication.properties**
 1. connect.api.integrator= your company name
