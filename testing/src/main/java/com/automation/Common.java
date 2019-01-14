@@ -1,6 +1,8 @@
 package com.automation;
 
 import com.automation.model.*;
+import com.automation.utils.ExtentReports.ExtentTestManager;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -8,6 +10,8 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -23,6 +27,7 @@ import com.ingenico.connect.gateway.sdk.java.domain.hostedcheckout.CreateHostedC
 import com.ingenico.connect.gateway.sdk.java.domain.hostedcheckout.definitions.HostedCheckoutSpecificInput;
 import com.ingenico.connect.gateway.sdk.java.domain.payment.definitions.Customer;
 import com.ingenico.connect.gateway.sdk.java.domain.payment.definitions.Order;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class Common {
 
@@ -115,15 +120,43 @@ public class Common {
 		}
 	}
 	
-	public static void TakeScreenshot(WebDriver driver,String filepath )
+	
+	public static boolean isElementPresent(String xpath)
 	{
-		try {
-			TakesScreenshot scrShot =((TakesScreenshot)driver);
-			File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
-			File DestFile=new File(filepath);
-			FileUtils.copyFile(SrcFile, DestFile);
-		} catch (IOException e) {
-			e.printStackTrace();
+		try
+		{
+			driver.findElement(By.xpath(xpath));
+			return true;
 		}
+		catch(Exception e)
+		{
+			return false;
+		}
+		
 	}
+	
+	public static void ScrollWindow()
+	{
+		 JavascriptExecutor js = (JavascriptExecutor) driver;
+		    js.executeScript("window.scrollBy(0,1000)");
+	}
+	
+	public static void TakeScreenshotPass()
+	{
+		 String base64Screenshot = "data:image/png;base64,"+((TakesScreenshot)driver).
+	                getScreenshotAs(OutputType.BASE64);
+	 
+	        ExtentTestManager.getTest().log(LogStatus.PASS,"Step passed",
+	                ExtentTestManager.getTest().addBase64ScreenShot(base64Screenshot));
+	}
+	
+	public static void TakeScreenshotFail()
+	{
+		 String base64Screenshot = "data:image/png;base64,"+((TakesScreenshot)driver).
+	                getScreenshotAs(OutputType.BASE64);
+	 
+	        ExtentTestManager.getTest().log(LogStatus.FAIL,"Step failed",
+	                ExtentTestManager.getTest().addBase64ScreenShot(base64Screenshot));
+	}
+	
 }
