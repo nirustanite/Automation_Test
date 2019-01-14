@@ -107,6 +107,7 @@ public class Common {
 		System.setProperty("webdriver.chrome.driver","driver\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-extensions");
+		options.addArguments("headless");
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 	}
