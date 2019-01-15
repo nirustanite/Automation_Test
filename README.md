@@ -18,7 +18,8 @@
 **config.properties**
 1. ApiKeyId.
 2. SecretApiKey.
-3. MerchantID
+3. MerchantId.
+4. chromedriverpath.
 
 
 **authentication.properties**
@@ -34,9 +35,10 @@ mvn clean test -DsuiteXmlFile=testng.xml
 ---
 
 **PREREQUISTES**
-1. Enter values in unfilled places in resources/authentication.properties
-2. Enter values in unfilled places in resources/config.properties
-3. Install chrome driver and place it in driver folder.
+1. Create config.properties and authentication.properties in resources folder.
+1. Enter values in unfilled places by using resources/sampleauthentication.properties in resources/authentication.properties.
+2. Enter values in unfilled places by using resources/sampleconfig.properties in resources/config.properties.
+3. Install chrome driver and place the path in resources/config.properties
 
 ---
 
