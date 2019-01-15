@@ -1,9 +1,0 @@
-.metadata
-/target/
-/test-output/
-.project
-.classpath
-.settings
-resources/config.properties
-resources/authentication.properties
-driver/chromedriver.exe

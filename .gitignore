@@ -1,2 +1,9 @@
 /.metadata/
 /.recommenders/
+/testing/.metadata/
+/testing/target/
+/testing/.project
+/testing/.classpath
+/testing/.settings
+/testing/resources/config.properties
+/testing/resources/authentication.properties
