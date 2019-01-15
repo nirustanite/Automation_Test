@@ -13,7 +13,7 @@ public class VerifyPaymentSuccessful extends Common{
 		Common.LoadDriver();
 	    ExtentTestManager.getTest().setDescription("Verify Payment successful");
 	    driver.get(URL);
-	    if(Common.isElementPresent("//*[@id='selectmethod']"))
+	    if(Common.isElementPresent(Common.read("VerificationPaymentScreen")))
 	    {
 	    	ExtentTestManager.getTest().log(LogStatus.PASS,"Payment Screen is loaded");
 		    Common.TakeScreenshotPass();
@@ -25,26 +25,26 @@ public class VerifyPaymentSuccessful extends Common{
 	    }
 	    Common.ScrollWindow();
 	 
-	    if(Common.isElementPresent("(//*[@name='paymentProductId']/div)[18]"))
+	    if(Common.isElementPresent(Common.read("SelectIdealPaymentOption")))
 	    {
 	    	ExtentTestManager.getTest().log(LogStatus.PASS,"Ideal payment is present");
 	    	Common.TakeScreenshotPass();
-	    	driver.findElement(By.xpath("(//*[@name='paymentProductId']/div)[18]")).click();
+	    	driver.findElement(By.xpath(Common.read("SelectIdealPaymentOption"))).click();
 	    }
 	    else
 	    {
 	    	ExtentTestManager.getTest().log(LogStatus.FAIL,"Ideal payment is not loaded");
 	    	Common.TakeScreenshotFail();
 	    }
-	    if(Common.isElementPresent("//*[@id='label-issuerId']")) {
+	    if(Common.isElementPresent(Common.read("VerifySelectBank"))) {
 	    	ExtentTestManager.getTest().log(LogStatus.PASS,"Select your Bank is present");
 	    	Common.TakeScreenshotPass();
-	    	if(Common.isElementPresent("//select[@name='issuerId']/option[11]"))
+	    	if(Common.isElementPresent(Common.read("ClickIssuer")))
 	    	{
 	    		ExtentTestManager.getTest().log(LogStatus.PASS,"Issuer is present");
-	    		driver.findElement(By.xpath("//select[@name='issuerId']/option[11]")).click();
+	    		driver.findElement(By.xpath(Common.read("ClickIssuer"))).click();
 	    		Common.TakeScreenshotPass();
-	    		driver.findElement(By.id("primaryButton")).click();
+	    		driver.findElement(By.id(Common.read("PayButton"))).click();
 	    	}
 	    }
 	    else
@@ -52,22 +52,22 @@ public class VerifyPaymentSuccessful extends Common{
 	    	ExtentTestManager.getTest().log(LogStatus.FAIL,"Select your Bank is not present");
 	    	Common.TakeScreenshotFail();
 	    }
-	    if(Common.isElementPresent("//*[@name='button.edit']"))
+	    if(Common.isElementPresent(Common.read("ConfirmTransaction")))
 	    {
 	    	ExtentTestManager.getTest().log(LogStatus.PASS,"Ideal Issuer Simulation page is navigated");
 	    	Common.TakeScreenshotPass();
-	    	driver.findElement(By.name("button.edit")).click();
+	    	driver.findElement(By.name(Common.read("ClickConfirmTransaction"))).click();
 	    }
 	    else
 	    {
 	    	ExtentTestManager.getTest().log(LogStatus.PASS,"Ideal Issuer Simulation page is not navigated");
 	    	Common.TakeScreenshotFail();
 	    }
-	    if(Common.isElementPresent("//*[@class='paymentoptions']/h2"))
+	    if(Common.isElementPresent(Common.read("VerifyPaymentStatus")))
 	    {
 	    	ExtentTestManager.getTest().log(LogStatus.PASS,"Payment Status Page is loaded");
 	    	Common.TakeScreenshotPass();
-	    	String getText = driver.findElement(By.xpath("//*[@class='paymentoptions']/p")).getText();
+	    	String getText = driver.findElement(By.xpath(Common.read("PaymentSuccessful"))).getText();
 	    	if(getText.equalsIgnoreCase("Your payment is successful."))
 	    	{
 	    		ExtentTestManager.getTest().log(LogStatus.PASS,"Verified Payment is successful");
