@@ -14,10 +14,12 @@
 ---
 
 **PREREQUISTES**
-1. Create config.properties and authentication.properties in resources folder.
-1. Enter values in unfilled places by using resources/sampleauthentication.properties in resources/authentication.properties.
-2. Enter values in unfilled places by using resources/sampleconfig.properties in resources/config.properties.
-3. Install chrome driver and place the path in resources/config.properties
+1. Maven should be installed.
+2. Runtime Environment should be JDK.
+3. Create config.properties and authentication.properties in resources folder.
+4. Enter values in unfilled places by using resources/sampleauthentication.properties in resources/authentication.properties.
+5. Enter values in unfilled places by using resources/sampleconfig.properties in resources/config.properties.
+6. Install chrome driver and place the path in resources/config.properties
    Example Path: \\Path to exe\\chromedriver.exe
 
 ---
