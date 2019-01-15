@@ -104,7 +104,7 @@ public class Common {
 	
 	public static void LoadDriver()
 	{
-		System.setProperty("webdriver.chrome.driver","driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver",read("chromedriverpath"));
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-extensions");
 		options.addArguments("headless");
